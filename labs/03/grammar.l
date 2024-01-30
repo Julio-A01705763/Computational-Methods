@@ -20,8 +20,8 @@ int yywrap() {
 "likes"         { return VERB; }
 "sees"          { return VERB; }
 "with"          { return PREP; }
-[ \t\n]+        { /* Ignorar espacios en blanco */ }
+[ \t]+        { /* Ignorar espacios en blanco */ }
 .               { /* Caracteres no reconocidos */ }
-
+\n              { return NEWLINE; }
 %%
 
